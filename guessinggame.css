@@ -28,7 +28,12 @@ button{
 #guessbox{
   max-width: 200px;
   margin-bottom: 17px;
-
+}
+#talkbox{
+  position: absolute;
+  top:200px;
+  left:87px;
+  
 }
 #magnify_glass{
   width: 400px;
@@ -39,5 +44,8 @@ button{
 @media only screen and (max-width: 668px) {
     #magnify_glass {
         display: none;
+    }
+    #talkbox{
+      position: static;
     }
 }
