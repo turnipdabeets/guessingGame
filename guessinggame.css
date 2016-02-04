@@ -1,0 +1,43 @@
+body{
+  font-family: 'Special Elite', cursive;
+  background-image: url(http://www.millionglitters.com/background/thumb/pattern/background-pattern-004.jpg);
+  background-repeat: repeat;
+  text-align: center;
+}
+h1{
+  font-size: 4em;
+}
+h2{
+  font-family: monospace;
+  font-size: 2em;
+}
+input{
+   text-align:center;
+   margin:7px;
+   padding:7px;
+   border: inset #bdc5ce;
+}
+button{
+  margin: 2px;
+}
+#container{
+  position: relative;
+  max-width: 750px;
+  margin-top: 90px;
+}
+#guessbox{
+  max-width: 200px;
+  margin-bottom: 17px;
+
+}
+#magnify_glass{
+  width: 400px;
+  position: absolute;
+  top:100px;
+  left:0px;
+}
+@media only screen and (max-width: 668px) {
+    #magnify_glass {
+        display: none;
+    }
+}
