@@ -6,9 +6,10 @@ body{
 }
 h1{
   font-size: 4em;
+  text-shadow: 3px -5px 4px rgba(22, 22, 22, .3);
 }
 h2{
-  font-family: monospace;
+  font-family: monospace; sans-serif;
   font-size: 2em;
 }
 input{
@@ -16,9 +17,18 @@ input{
    margin:7px;
    padding:7px;
    border: inset #bdc5ce;
+   width:190px;
 }
 button{
   margin: 2px;
+}
+.btn-default{
+  background: -webkit-linear-gradient(to top, #cecfd5, #f2f2f2);
+  background: -moz-linear-gradient(to top, #cecfd5, #f2f2f2);
+  background: linear-gradient(to top, #cecfd5, #f2f2f2);
+}
+.btn-default:hover{
+  background: #cecfd5;
 }
 #container{
   position: relative;
@@ -36,10 +46,10 @@ button{
   
 }
 #magnify_glass{
-  width: 400px;
+  width: 350px;
   position: absolute;
-  top:100px;
-  left:0px;
+  top:130px;
+  left:30px;
 }
 @media only screen and (max-width: 668px) {
     #magnify_glass {

@@ -9,27 +9,25 @@
   <link href='guessinggame.css' rel='stylesheet' type="text/css">
 </head>
 <body>
-<div id="container" class="container-fluid">
-  <header>
-    <h1>Guess The Number</h1>
-    <h2>This mission is simple, guess a number between 1-100</h2>
-  </header>
-  <section>
-    <img src="img/detective.png" alt="detective">
-    <img id="magnify_glass" src="img/glass.png" alt="magnifying glass">
-    <div id="talkbox">Your guesses: </div>
-  </section>
-  <section>
-    <div id="guessbox" class="center-block">
-      <input class="center-block" type="text" placeholder="number between 1-100" required >
+  <div id="container" class="container-fluid">
+    <header>
+      <h1>Guess The Number</h1>
+      <h2>This mission is simple, guess a number between 1-100</h2>
+    </header>
+    <section>
+      <img src="img/detective.png" alt="detective silhouette">
+      <img id="magnify_glass" src="img/glass.png" alt="magnifying glass">
+      <div id="talkbox">Your guesses: </div>
+    </section>
+    <form id="guessbox" class="center-block">
+      <input class="center-block" type="number" min="0" max="100" placeholder="number between 1-100" required>
       <button class="btn btn-lg btn-default btn-block center-block" type="submit">Submit Guess</button>
       <button class="btn btn-warning" type="button">Need A Clue</button>
       <button class="btn btn-danger" type="button">Give Up</button>
-    </div>
-  </section>
-  <footer>
-    <p>Made by Anna Garcia | Grace Hopper Academy 2016.</p>
-  </footer>
+    </form>
+    <footer>
+      <small>Made by Anna Garcia | Grace Hopper Academy 2016.</small>
+    </footer>
 </div>
 </body>
 </html>
