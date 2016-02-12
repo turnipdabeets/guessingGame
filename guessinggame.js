@@ -50,8 +50,7 @@ function validCheck(){
 }
 
 function displayInValid(){
-  $("#cluebox").find("h4").text("Clues:");
-  $("#cluebox").find("h3").text("Please Enter a number " +minRange+"-"+maxRange);
+  $("#cluebox").find("h3").html("Please Enter A Number"+"</br>"+"[" +minRange+"-"+maxRange+"]");
 }
 
 // Display Guess in DOM
@@ -64,7 +63,6 @@ function displayGuess(){
 // Notify Duplicate in DOM
 
 function displayDuplicate(){
-  $("#cluebox").find("h4").text("Clues:");
   $("#cluebox").find("h3").text("You already guessed " + playersGuess + "!");
 } 
 
@@ -79,6 +77,8 @@ function displayLose(){
   $("#guessbox").hide();
   $("footer").find("small").addClass("highlight");
   $("#magnifyGlass").css("z-index",-1);
+
+  $("#answerbox").show().find("h1").text(winningNumber);
 }
 
 // Display Win in DOM
@@ -125,7 +125,6 @@ function guessMessage(){
   else if(distance <= 5)
         phrase = "Can’t check that off, yet! Your guess is too " +lowOrHigh+ " and nearly 5 degrees off.";
 
-  $("#cluebox").find("h4").text("Clues:");
   $("#cluebox").find("p").text(phrase);
 }
 
@@ -212,7 +211,6 @@ function playAgain(){
 // Allow the "Player" to Give Up
 function giveUp(){
   displayLose();
-  setTimeout(playAgain,2000);
 }
 
 /* **** Event Listeners/Handlers ****  */

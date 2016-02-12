@@ -69,13 +69,37 @@ button{
   display: none;
 }
 
+#answerbox{
+  display: none;
+  opacity: .7;
+  font-size: 1.5em;
+  top:180px;
+  /* Rotate */
+    -ms-transform: rotate(-17deg); /* IE 9 */
+    -webkit-transform: rotate(-17deg); /* Chrome, Safari, Opera */
+    -mox-transform: rotate(-17deg);
+    transform: rotate(-17deg);
+}
+
 #cluebox{
   top:345px;
   left:48px;
   width:180px;
   text-align: left;
-  background-color: "#e6e6e6";
-  border-radius: 10%;
+}
+
+#cluebox h3{
+  text-align: center;
+}
+
+.cluebox{
+  background-color: #f0f8ff;
+  border-radius: 8%;
+  opacity: .6;
+  padding:5px;
+  display: inline-block;
+  margin-top: 6px;
+  color: inherit;
 }
 
 .highlight{
@@ -97,7 +121,7 @@ button{
     #magnifyGlass {
         display: none;
     }
-    #talkbox, #winbox, #cluebox{
+    #talkbox, #winbox, #cluebox, #answerbox{
       position: static;
       margin: 0 auto;
     }
