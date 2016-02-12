@@ -30,6 +30,17 @@ button{
 .btn-default:hover{
   background: #cecfd5;
 }
+.magnifyText{
+  position: absolute;
+  width: 150px;
+  word-wrap: break-word;
+  top:160px;
+  left:58px;
+}
+.highlight{
+  color:red;
+}
+
 #container{
   position: relative;
   max-width: 750px;
@@ -39,23 +50,59 @@ button{
   max-width: 200px;
   margin-bottom: 17px;
 }
+
 #talkbox{
-  position: absolute;
-  top:200px;
-  left:87px;
-  
+  top:140px;
 }
-#magnify_glass{
+
+#talkbox h1{
+  margin-bottom: -15px;
+}
+
+#talkbox p{
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+#winbox{
+  display: none;
+}
+
+#cluebox{
+  top:345px;
+  left:48px;
+  width:180px;
+  text-align: left;
+  background-color: "#e6e6e6";
+  border-radius: 10%;
+}
+
+.highlight{
+  background-color: #f0f8ff;
+  border-radius: 10%;
+  padding:3px;
+  display: inline-block;
+  margin-top: 6px;
+  color: inherit;
+}
+
+#magnifyGlass{
   width: 350px;
   position: absolute;
   top:130px;
   left:30px;
 }
 @media only screen and (max-width: 668px) {
-    #magnify_glass {
+    #magnifyGlass {
         display: none;
     }
-    #talkbox{
+    #talkbox, #winbox, #cluebox{
       position: static;
+      margin: 0 auto;
     }
+    #talkbox p, #cluebox h4{
+      height: 1em;
+    }
+    
 }

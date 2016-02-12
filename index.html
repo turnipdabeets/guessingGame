@@ -3,31 +3,56 @@
 <head>
   <title>Guessing Game</title>
   <meta charset="utf-8">
+<!-- Styles --> 
   <link href='normalize.css' rel='stylesheet' type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
   <link href='guessinggame.css' rel='stylesheet' type="text/css">
 </head>
+<!-- Body --> 
 <body>
   <div id="container" class="container-fluid">
     <header>
       <h1>Guess The Number</h1>
       <h2>This mission is simple, guess a number between 1-100</h2>
     </header>
+
     <section>
-      <img src="img/detective.png" alt="detective silhouette">
-      <img id="magnify_glass" src="img/glass.png" alt="magnifying glass">
-      <div id="talkbox">Your guesses: </div>
+      <img id="detective" src="img/detective.png" alt="detective silhouette">
+      <img id="magnifyGlass" src="img/glass.png" alt="magnifying glass">
     </section>
-    <form id="guessbox" class="center-block">
-      <input class="center-block" type="number" min="0" max="100" placeholder="number between 1-100" required>
-      <button class="btn btn-lg btn-default btn-block center-block" type="submit">Submit Guess</button>
-      <button class="btn btn-warning" type="button">Need A Clue</button>
-      <button class="btn btn-danger" type="button">Give Up</button>
-    </form>
+
+    <section>
+      <div id="talkbox" class="magnifyText">
+        <h1>5</h1>
+        <h4>Your guesses: </h4>
+        <p></p>
+      </div>
+      <div id="winbox" class="magnifyText">
+        <h1></h1>
+      </div>
+      <div id="cluebox" class ="magnifyText">
+        <h4></h4>
+        <h3></h3>
+        <p></p>
+      </div>
+    </section>
+
+    <section id="guessbox" class="center-block">
+      <input class="center-block" type="number" placeholder="number between 1-100" required>
+      <button class="btn btn-lg btn-default btn-block center-block" id="submit" onclick="playersGuessSubmission()">Submit Guess</button>
+      <button onclick="provideHint()" class="btn btn-warning" type="button">Need A Clue</button>
+      <button onclick="giveUp()"class="btn btn-danger" type="button">Give Up</button>
+    </section>
+
+      <button id="playAgain" onclick="playAgain()" class="btn btn-primary" type="button">Play Again</button>
+
     <footer>
       <small>Made by Anna Garcia | Grace Hopper Academy 2016.</small>
     </footer>
-</div>
+  </div>
+<!-- Scripts --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+<script src="guessinggame.js"></script>
 </body>
 </html>
