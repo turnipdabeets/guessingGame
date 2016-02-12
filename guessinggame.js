@@ -50,7 +50,7 @@ function validCheck(){
 }
 
 function displayInValid(){
-  $("#cluebox").find("h3").html("Please Enter A Number"+"</br>"+"[" +minRange+"-"+maxRange+"]");
+  $("#cluebox").find("h3").html("Please Enter A Number"+"</br>" +minRange+"-"+maxRange);
 }
 
 // Display Guess in DOM
@@ -123,7 +123,7 @@ function guessMessage(){
   else if(distance <=10 && distance > 5)
         phrase = "Nice work! You’re under 10 degrees away but too "+ lowOrHigh+". ";
   else if(distance <= 5)
-        phrase = "Can’t check that off, yet! Your guess is too " +lowOrHigh+ " and nearly 5 degrees off.";
+        phrase = "Can’t check that off, yet! Your guess is too " +lowOrHigh+ ", but within 5 degrees.";
 
   $("#cluebox").find("p").text(phrase);
 }
@@ -180,7 +180,7 @@ function provideHint(){
 
       arr = shuffle(arr);  
   //display possibly answers in DOM    
-  $("#cluebox").find("p").html("One of these values is the winning number:"+ "</br>"+ "["+ arr +"]"+"</br>"+ "Submit a guess!");
+  $("#cluebox").find("p").html("One of these values is the winning number:"+ "</br>"+  arr +"</br>"+ "Submit a guess!");
 }
 
 //shuffle array so the winning number is not always in the same place
