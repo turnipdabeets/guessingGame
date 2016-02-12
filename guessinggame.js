@@ -180,7 +180,7 @@ function provideHint(){
 
       arr = shuffle(arr);  
   //display possibly answers in DOM    
-  $("#cluebox").find("p").text("One of these values is the winning number, [" + arr +"], submit a guess!");
+  $("#cluebox").find("p").html("One of these values is the winning number:"+ "</br>"+ "["+ arr +"]"+"</br>"+ "Submit a guess!");
 }
 
 //shuffle array so the winning number is not always in the same place
