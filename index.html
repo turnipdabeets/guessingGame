@@ -44,12 +44,12 @@
 
     <section id="guessbox" class="center-block">
       <input class="center-block" type="number" placeholder="number between 1-100" required>
-      <button class="btn btn-lg btn-default btn-block center-block" id="submit" onclick="playersGuessSubmission()">Submit Guess</button>
-      <button onclick="provideHint()" class="btn btn-warning" type="button">Need A Clue</button>
-      <button onclick="giveUp()"class="btn btn-danger" type="button">Give Up</button>
+      <button class="btn btn-lg btn-default btn-block center-block" id="submit" onclick="MASTER.playersGuessSubmission()">Submit Guess</button>
+      <button onclick="MASTER.provideHint()" class="btn btn-warning" type="button">Need A Clue</button>
+      <button onclick="MASTER.giveUp()"class="btn btn-danger" type="button">Give Up</button>
     </section>
 
-      <button id="playAgain" onclick="playAgain()" class="btn btn-primary" type="button">Play Again</button>
+      <button id="playAgain" onclick="MASTER.playAgain()" class="btn btn-primary" type="button">Play Again</button>
 
     <footer>
       <small>Made by Anna Garcia | Grace Hopper Academy 2016.</small>
