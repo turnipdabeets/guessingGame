@@ -121,6 +121,13 @@ var MASTER = function(){
     }
   }
 
+  // Fetch the Players Guess on keyboard Enter
+  $(document).keypress(function(e) {
+      if(e.which == 13) {
+          MASTER.playersGuessSubmission();
+      }
+  });
+
   //shuffle array so the winning number is not always in the same place
   function shuffle(array) {
     var amount = array.length, temp, index;
@@ -140,76 +147,69 @@ var MASTER = function(){
     return array;
   }
 
+  // Create a provide hint button that provides additional clues to the "Player"
+  function provideHint(){
+    var arr = [], displayAmount, possibleNumber;
+
+  //determine how many possible winning numbers to show based on number of guesses left
+    switch(guessesLeft){
+      case 3:
+        displayAmount = 5;
+        break;
+      case 2:
+        displayAmount = 4;
+        break;
+      case 1:
+        displayAmount = 1;
+        break;
+      default:
+        displayAmount = 7;
+        break;
+    }
+    //create array of possible winning numbers plus the actual winningNumber
+    for(var i = displayAmount; i > 0; i--){
+        possibleNumber = generateWinningNumber(minRange,maxRange);
+        arr.push(possibleNumber);
+    }  
+        arr.push(winningNumber);
+
+        arr = shuffle(arr);  
+    //display possibly answers in DOM    
+    $("#cluebox").find("p").html("One of these values is the winning number:"+ "</br>"+  arr +"</br>"+ "Submit a guess!");
+  }
+
+  // Fetch the Players Guess
+  function playersGuessSubmission(){
+    $("#cluebox").find("h3").text("");
+    playersGuess = +$('input').val();
+    duplicate = (playersGuessArray.indexOf(playersGuess) >= 0)
+
+    //if valid push to array
+    playersGuessArray.push(playersGuess);
+    $('input').val("");
+
+    console.log("win num is "+ winningNumber);
+    //check for win and display guess in DOM
+    checkGuess();
+    displayGuess();
+  }
+
+  // Allow the "Player" to Give Up
+  function giveUp(){
+    displayLose();
+  }
+
+  // Allow the "Player" to Play Again
+  function playAgain(){
+    location.reload();
+  }
+
   /* **** MASTER's Public methods **** */
-  return {
-      // Fetch the Players Guess
-      playersGuessSubmission: function(){
-        $("#cluebox").find("h3").text("");
-        playersGuess = +$('input').val();
-        duplicate = (playersGuessArray.indexOf(playersGuess) >= 0)
-
-        //if valid push to array
-        playersGuessArray.push(playersGuess);
-        $('input').val("");
-
-        console.log("win num is "+ winningNumber);
-        //check for win and display guess in DOM
-        checkGuess();
-        displayGuess();
-      },
-
-      // Create a provide hint button that provides additional clues to the "Player"
-      provideHint: function(){
-        var arr = [], displayAmount, possibleNumber;
-
-      //determine how many possible winning numbers to show based on number of guesses left
-        switch(guessesLeft){
-          case 3:
-            displayAmount = 5;
-            break;
-          case 2:
-            displayAmount = 4;
-            break;
-          case 1:
-            displayAmount = 1;
-            break;
-          default:
-            displayAmount = 7;
-            break;
-        }
-        //create array of possible winning numbers plus the actual winningNumber
-        for(var i = displayAmount; i > 0; i--){
-            possibleNumber = generateWinningNumber(minRange,maxRange);
-            arr.push(possibleNumber);
-        }  
-            arr.push(winningNumber);
-
-            arr = shuffle(arr);  
-        //display possibly answers in DOM    
-        $("#cluebox").find("p").html("One of these values is the winning number:"+ "</br>"+  arr +"</br>"+ "Submit a guess!");
-      },
-
-      // Allow the "Player" to Give Up
-      giveUp: function(){
-        displayLose();
-      },
-
-      // Allow the "Player" to Play Again
-      playAgain: function(){
-        location.reload();
-      }
+  return {     
+      playersGuessSubmission: playersGuessSubmission,
+      provideHint: provideHint,
+      giveUp:giveUp,
+      playAgain: playAgain   
   }
 
 }();
-
-$(document).ready(function(){
-
-  // Fetch the Players Guess on keyboard Enter
-  $(document).keypress(function(e) {
-      if(e.which == 13) {
-          MASTER.playersGuessSubmission();
-      }
-  });
-
-});
-
